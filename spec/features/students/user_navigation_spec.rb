@@ -15,11 +15,7 @@ describe "As a user" do
     it "I can see links to create a new student" do
       visit students_path
 
-      expect(page).to have_content("Create Student")
-
-      visit new_student_path
-
-      expect(page).to have_content("Create Student")
+      expect(page).to have_content("Make Student")
     end
   end
 
@@ -31,7 +27,7 @@ describe "As a user" do
 
       click_on "#{student.name}"
 
-      expect(current_path).to eq("students/1")
+      expect(current_path).to eq("/students/1")
       expect(page).to have_content(student.name)
       expect(page).to_not have_content("Opakawagalaga")
     end
