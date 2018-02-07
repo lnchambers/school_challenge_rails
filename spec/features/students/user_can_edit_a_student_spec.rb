@@ -3,7 +3,9 @@ require "rails_helper"
 describe "As a user" do
   describe "when I visit /students/:id/edit" do
     it "I can edit a student" do
-      visit edit_student_path
+      student = create(:student)
+
+      visit edit_student_path(student)
 
       fill_in "student[name]", with: "Opakawagalaga"
       click_on "Update Student"
