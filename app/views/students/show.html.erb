@@ -6,3 +6,7 @@
   <%= a.state %>
   <%= a.zip %>
 <% end %>
+
+<%= @student.courses.each do |c| %>
+  <%= c.name %>
+<% end %>
