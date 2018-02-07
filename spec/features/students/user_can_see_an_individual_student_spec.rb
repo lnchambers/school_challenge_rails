@@ -13,7 +13,7 @@ describe "As a user" do
     it "I can see a list of courses the student is taking" do
       student = create(:student)
       course = create(:course)
-      byebug
+      binding.pry
       student.courses << course
 
       visit student_path(student)
