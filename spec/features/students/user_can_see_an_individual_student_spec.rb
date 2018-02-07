@@ -9,5 +9,17 @@ describe "As a user" do
 
       expect(page).to have_content(student.name)
     end
+
+    it "I can see a list of courses the student is taking" do
+      student = create(:student)
+      course = create(:course)
+      byebug
+      student.courses << course
+
+      visit student_path(student)
+
+      expect(page).to have_content(student.name)
+      expect(page).to have_content(course.name)
+    end
   end
 end
