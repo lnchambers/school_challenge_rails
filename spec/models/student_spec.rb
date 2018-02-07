@@ -20,5 +20,10 @@ RSpec.describe Student, type: :model do
       student = create(:student)
       expect(student).to respond_to(:addresses)
     end
+
+    it "has many courses" do
+      student = create(:student)
+      expect(student).to respond_to(:courses)
+    end
   end
 end
