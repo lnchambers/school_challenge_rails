@@ -8,6 +8,7 @@ describe "As a user" do
       course.students << student
 
       visit course_path(course)
+      save_and_open_page
 
       expect(page).to have_content(student.name)
       expect(page).to have_content(course.name)
