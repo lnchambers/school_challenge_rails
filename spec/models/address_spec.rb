@@ -32,4 +32,11 @@ RSpec.describe Address, type: :model do
       expect(address).to be_invalid
     end
   end
+
+  describe "Relationships" do
+    it "belongs to a student" do
+      address = create(:address)
+      expect(address).to respond_to(:student)
+    end
+  end
 end
